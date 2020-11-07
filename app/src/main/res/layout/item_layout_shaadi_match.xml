@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_10_dp"
+    android:background="@color/colorPrimary"
+    android:elevation="4dp"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_10_dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/dimen_100_dp"
+        android:layout_height="@dimen/dimen_100_dp"
+        android:layout_centerHorizontal="true"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/accept_button" />
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10_dp"
+        android:padding="@dimen/dimen_10_dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_size_16_sp"
+        android:textStyle="bold"
+        tools:text="@string/app_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10_dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_size_16_sp"
+        android:textStyle="bold"
+        tools:text="title" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10_dp"
+        android:textColor="#FF5722"
+        android:textSize="@dimen/text_size_16_sp"
+        android:textStyle="normal"
+        android:visibility="gone"
+        tools:text="title" />
+
+    <LinearLayout
+        android:id="@+id/lytButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_10_dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnReject"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/decline_button" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnAccept"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/accept_button" />
+    </LinearLayout>
+
+</RelativeLayout>
