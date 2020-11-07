@@ -6,6 +6,7 @@ import com.sumcorp.shaadiassignment.data.local.entity.model.ShaadiRequestRespons
 import com.sumcorp.sliceassignment.retrofit.ApiService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -56,8 +57,8 @@ class ShaadiRepositoryImplementation(
     override fun getRequestLocally(
         onSuccess: (ShaadiRequestResponse?) -> Unit,
     ) {
-        Thread {
-            var requestResponse = ShaadiRequestResponse(dao.getRequests() as ArrayList<ResultData>)
+        CoroutineScope(IO).launch {
+            val requestResponse = ShaadiRequestResponse(dao.getRequests() as ArrayList<ResultData>)
 
             onSuccess(requestResponse)
         }.start()
@@ -70,7 +71,7 @@ class ShaadiRepositoryImplementation(
 
 
     override fun updateDataLocally(resultData: ResultData) {
-        Thread {
+        CoroutineScope(IO).launch {
             dao.updateData(resultData)
         }.start()
     }
